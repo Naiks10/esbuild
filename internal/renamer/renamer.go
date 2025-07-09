@@ -605,18 +605,20 @@ func (s *numberScope) findUnusedName(name string, ns ast.SlotNamespace) string {
 		prefix := name
 
 		// Keep incrementing the number until the name is unused
-		for {
-			tries++
-			name = prefix + strconv.Itoa(int(tries))
+		if s.nameCounts[name] > 0 {
+			for {
+				tries++
+				name = prefix + strconv.Itoa(int(tries))
 
-			// Make sure this new name is unused
-			if s.findNameUse(name) == nameUnused {
-				// Store the count so we can start here next time instead of starting
-				// from 1. This means we avoid O(n^2) behavior.
-				if use == nameUsedInSameScope {
-					s.nameCounts[prefix] = tries
+				// Make sure this new name is unused
+				if s.findNameUse(name) == nameUnused {
+					// Store the count so we can start here next time instead of starting
+					// from 1. This means we avoid O(n^2) behavior.
+					if use == nameUsedInSameScope {
+						s.nameCounts[prefix] = tries
+					}
+					break
 				}
-				break
 			}
 		}
 	}
@@ -642,11 +644,11 @@ func (r *ExportRenamer) NextRenamedName(name string) string {
 	if tries, ok := r.used[name]; ok {
 		prefix := name
 		for {
-			tries++
 			name = prefix + strconv.Itoa(int(tries))
 			if _, ok := r.used[name]; !ok {
 				break
 			}
+			tries++
 		}
 		r.used[name] = tries
 	} else {
