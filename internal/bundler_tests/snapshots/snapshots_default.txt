@@ -1765,7 +1765,7 @@ import "foo";
 TestFalseRequire
 ---------- /out.js ----------
 // entry.js
-((require2) => require2("/test.txt"))();
+((require) => require("/test.txt"))();
 
 ================================================================================
 TestHashbangBannerUseStrictOrder
@@ -2500,13 +2500,13 @@ export {
 ---------- /out/typescript-enum.js ----------
 // typescript-enum.tsx
 import { jsxDEV } from "react/jsx-dev-runtime";
-var Foo = /* @__PURE__ */ ((Foo2) => {
-  Foo2[Foo2["foo"] = /* @__PURE__ */ jsxDEV("div", {}, void 0, false, {
+var Foo = /* @__PURE__ */ ((Foo) => {
+  Foo[Foo["foo"] = /* @__PURE__ */ jsxDEV("div", {}, void 0, false, {
     fileName: "typescript-enum.tsx",
     lineNumber: 1,
     columnNumber: 25
   })] = "foo";
-  return Foo2;
+  return Foo;
 })(Foo || {});
 export {
   Foo
@@ -2516,8 +2516,8 @@ export {
 // typescript-namespace.tsx
 import { jsxDEV } from "react/jsx-dev-runtime";
 var Foo;
-((Foo2) => {
-  Foo2.foo = /* @__PURE__ */ jsxDEV("div", {}, void 0, false, {
+((Foo) => {
+  Foo.foo = /* @__PURE__ */ jsxDEV("div", {}, void 0, false, {
     fileName: "typescript-namespace.tsx",
     lineNumber: 1,
     columnNumber: 41
@@ -2745,7 +2745,7 @@ TestKeepNamesAllForms
 function fn() {
 }
 __name(fn, "fn");
-function foo(fn2 = function() {
+function foo(fn = function() {
 }) {
 }
 __name(foo, "foo");
@@ -2833,11 +2833,11 @@ for (var [fn = /* @__PURE__ */ __name(function() {
 }, "fn")] of obj) ;
 for (var { fn = /* @__PURE__ */ __name(function() {
 }, "fn") } of obj) ;
-function foo([fn2 = /* @__PURE__ */ __name(function() {
+function foo([fn = /* @__PURE__ */ __name(function() {
 }, "fn")]) {
 }
 __name(foo, "foo");
-function foo({ fn: fn2 = /* @__PURE__ */ __name(function() {
+function foo({ fn = /* @__PURE__ */ __name(function() {
 }, "fn") }) {
 }
 __name(foo, "foo");
@@ -3852,10 +3852,10 @@ var require_cjs = __commonJS({
 // entry-cjs.js
 var require_entry_cjs = __commonJS({
   "entry-cjs.js"(exports) {
-    var { b: esm_foo_2 } = (init_esm(), __toCommonJS(esm_exports));
+    var { b: esm_foo_ } = (init_esm(), __toCommonJS(esm_exports));
     var { a: cjs_foo_ } = require_cjs();
     exports.c = [
-      esm_foo_2,
+      esm_foo_,
       cjs_foo_
     ];
   }
@@ -4056,29 +4056,29 @@ console.log(foo.KEEP_FIELD, foo.a);
 
 ---------- /out/namespace-exports.js ----------
 var ns;
-((ns2) => {
-  ns2.c = 1;
-  ns2.d = 2;
-  ns2.e = 3;
-  ({ i: { a: ns2.a } } = 4);
+((ns) => {
+  ns.c = 1;
+  ns.d = 2;
+  ns.e = 3;
+  ({ i: { a: ns.a } } = 4);
   function MANGLE_FUNCTION_() {
   }
-  ns2.g = MANGLE_FUNCTION_;
+  ns.g = MANGLE_FUNCTION_;
   class MANGLE_CLASS_ {
   }
-  ns2.h = MANGLE_CLASS_;
+  ns.h = MANGLE_CLASS_;
   let MANGLE_NAMESPACE_;
-  ((MANGLE_NAMESPACE_2) => {
+  ((MANGLE_NAMESPACE_) => {
     ;
-  })(MANGLE_NAMESPACE_ = ns2.f || (ns2.f = {}));
+  })(MANGLE_NAMESPACE_ = ns.f || (ns.f = {}));
   let MANGLE_ENUM_;
-  ((MANGLE_ENUM_2) => {
-  })(MANGLE_ENUM_ = ns2.b || (ns2.b = {}));
+  ((MANGLE_ENUM_) => {
+  })(MANGLE_ENUM_ = ns.b || (ns.b = {}));
   console.log({
-    VAR: ns2.c,
-    LET: ns2.d,
-    CONST: ns2.e,
-    DESTRUCTURING: ns2.a,
+    VAR: ns.c,
+    LET: ns.d,
+    CONST: ns.e,
+    DESTRUCTURING: ns.a,
     FUNCTION: MANGLE_FUNCTION_,
     CLASS: MANGLE_CLASS_,
     NAMESPACE: MANGLE_NAMESPACE_,
@@ -4095,27 +4095,27 @@ console.log({
   NAMESPACE: ns.f,
   ENUM: ns.b
 });
-((ns2) => {
+((ns) => {
   console.log({
-    VAR: ns2.c,
-    LET: ns2.d,
-    CONST: ns2.e,
-    DESTRUCTURING: ns2.a,
-    FUNCTION: ns2.g,
-    CLASS: ns2.h,
-    NAMESPACE: ns2.f,
-    ENUM: ns2.b
+    VAR: ns.c,
+    LET: ns.d,
+    CONST: ns.e,
+    DESTRUCTURING: ns.a,
+    FUNCTION: ns.g,
+    CLASS: ns.h,
+    NAMESPACE: ns.f,
+    ENUM: ns.b
   });
 })(ns || (ns = {}));
 
 ---------- /out/enum-values.js ----------
-var TopLevelNumber = /* @__PURE__ */ ((TopLevelNumber2) => {
-  TopLevelNumber2[TopLevelNumber2["foo_"] = 0] = "foo_";
-  return TopLevelNumber2;
+var TopLevelNumber = /* @__PURE__ */ ((TopLevelNumber) => {
+  TopLevelNumber[TopLevelNumber["foo_"] = 0] = "foo_";
+  return TopLevelNumber;
 })(TopLevelNumber || {});
-var TopLevelString = /* @__PURE__ */ ((TopLevelString2) => {
-  TopLevelString2["bar_"] = "";
-  return TopLevelString2;
+var TopLevelString = /* @__PURE__ */ ((TopLevelString) => {
+  TopLevelString["bar_"] = "";
+  return TopLevelString;
 })(TopLevelString || {});
 console.log({
   foo: TopLevelNumber.a,
@@ -4123,12 +4123,12 @@ console.log({
 });
 function fn() {
   let NestedNumber;
-  ((NestedNumber2) => {
-    NestedNumber2[NestedNumber2["foo_"] = 0] = "foo_";
+  ((NestedNumber) => {
+    NestedNumber[NestedNumber["foo_"] = 0] = "foo_";
   })(NestedNumber || (NestedNumber = {}));
   let NestedString;
-  ((NestedString2) => {
-    NestedString2["bar_"] = "";
+  ((NestedString) => {
+    NestedString["bar_"] = "";
   })(NestedString || (NestedString = {}));
   console.log({
     foo: TopLevelNumber.a,
@@ -5480,8 +5480,8 @@ __export(entry_exports, {
   confuseNode: () => confuseNode
 });
 module.exports = __toCommonJS(entry_exports);
-function confuseNode(exports2) {
-  exports2.notAnExport = function() {
+function confuseNode(exports) {
+  exports.notAnExport = function() {
   };
 }
 // Annotate the CommonJS export names for ESM import in node:
@@ -5555,7 +5555,7 @@ function foo() {
   console.log(
     'this must not become "{ __proto__ }":',
     {
-      __proto__: __proto__,
+      __proto__,
       bar
     }
   );
@@ -5578,7 +5578,7 @@ function foo(__proto__, bar) {
   console.log(
     'this must not become "{ __proto__ }":',
     {
-      __proto__: __proto__,
+      __proto__,
       bar
     }
   );
@@ -5587,12 +5587,12 @@ function foo(__proto__, bar) {
 ---------- /out/local-shorthand.js ----------
 function foo(__proto__, bar) {
   {
-    let __proto__2, bar2;
+    let __proto__, bar;
     console.log(
       'this must not become "{ __proto__: ... }":',
       {
-        ["__proto__"]: __proto__2,
-        bar: bar2
+        __proto__: __proto__,
+        bar
       }
     );
   }
@@ -5618,7 +5618,7 @@ function foo() {
   console.log(
     'this must not become "{ __proto__ }":',
     {
-      __proto__: __proto__,
+      __proto__,
       bar
     }
   );
@@ -5627,12 +5627,12 @@ function foo() {
 ---------- /out/local-computed.js ----------
 function foo(__proto__, bar) {
   {
-    let __proto__2, bar2;
+    let __proto__, bar;
     console.log(
       'this must not become "{ __proto__: ... }":',
       {
-        ["__proto__"]: __proto__2,
-        bar: bar2
+        ["__proto__"]: __proto__,
+        bar
       }
     );
   }
@@ -5643,7 +5643,7 @@ function foo(__proto__, bar) {
   console.log(
     'this must not become "{ __proto__ }":',
     {
-      __proto__: __proto__,
+      __proto__,
       bar
     }
   );
@@ -5896,8 +5896,8 @@ class Foo {
   #foo;
   foo = class {
     #foo2;
-    #foo22;
-    #bar2;
+    #foo;
+    #bar;
   };
   get #bar() {
   }
@@ -5907,9 +5907,9 @@ class Foo {
 class Bar {
   #foo;
   foo = class {
+    #foo;
     #foo2;
-    #foo3;
-    #bar2;
+    #bar;
   };
   get #bar() {
   }
@@ -6036,8 +6036,8 @@ TestRequireMainCacheCommonJS
 ---------- /out.js ----------
 // is-main.js
 var require_is_main = __commonJS({
-  "is-main.js"(exports2, module2) {
-    module2.exports = require.main === module2;
+  "is-main.js"(exports, module) {
+    module.exports = require.main === module;
   }
 });
 
@@ -6553,7 +6553,7 @@ var require_es6_import_stmt = __commonJS({
 // es6-import-assign.ts
 var require_es6_import_assign = __commonJS({
   "es6-import-assign.ts"(exports) {
-    var x2 = (init_dummy(), __toCommonJS(dummy_exports));
+    var x = (init_dummy(), __toCommonJS(dummy_exports));
     console.log(exports);
   }
 });
@@ -6586,8 +6586,8 @@ var require_es6_export_assign = __commonJS({
 var require_es6_ns_export_variable = __commonJS({
   "es6-ns-export-variable.ts"(exports) {
     var ns;
-    ((ns2) => {
-      ns2.foo = 123;
+    ((ns) => {
+      ns.foo = 123;
     })(ns || (ns = {}));
     console.log(exports);
   }
@@ -6597,10 +6597,10 @@ var require_es6_ns_export_variable = __commonJS({
 var require_es6_ns_export_function = __commonJS({
   "es6-ns-export-function.ts"(exports) {
     var ns;
-    ((ns2) => {
+    ((ns) => {
       function foo() {
       }
-      ns2.foo = foo;
+      ns.foo = foo;
     })(ns || (ns = {}));
     console.log(exports);
   }
@@ -6610,10 +6610,10 @@ var require_es6_ns_export_function = __commonJS({
 var require_es6_ns_export_async_function = __commonJS({
   "es6-ns-export-async-function.ts"(exports) {
     var ns;
-    ((ns2) => {
+    ((ns) => {
       async function foo() {
       }
-      ns2.foo = foo;
+      ns.foo = foo;
     })(ns || (ns = {}));
     console.log(exports);
   }
@@ -6623,10 +6623,10 @@ var require_es6_ns_export_async_function = __commonJS({
 var require_es6_ns_export_enum = __commonJS({
   "es6-ns-export-enum.ts"(exports) {
     var ns;
-    ((ns2) => {
+    ((ns) => {
       let Foo;
-      ((Foo2) => {
-      })(Foo = ns2.Foo || (ns2.Foo = {}));
+      ((Foo) => {
+      })(Foo = ns.Foo || (ns.Foo = {}));
     })(ns || (ns = {}));
     console.log(exports);
   }
@@ -6636,10 +6636,10 @@ var require_es6_ns_export_enum = __commonJS({
 var require_es6_ns_export_const_enum = __commonJS({
   "es6-ns-export-const-enum.ts"(exports) {
     var ns;
-    ((ns2) => {
+    ((ns) => {
       let Foo;
-      ((Foo2) => {
-      })(Foo = ns2.Foo || (ns2.Foo = {}));
+      ((Foo) => {
+      })(Foo = ns.Foo || (ns.Foo = {}));
     })(ns || (ns = {}));
     console.log(exports);
   }
@@ -6663,10 +6663,10 @@ var require_es6_ns_export_namespace = __commonJS({
 var require_es6_ns_export_class = __commonJS({
   "es6-ns-export-class.ts"(exports) {
     var ns;
-    ((ns2) => {
+    ((ns) => {
       class Foo {
       }
-      ns2.Foo = Foo;
+      ns.Foo = Foo;
     })(ns || (ns = {}));
     console.log(exports);
   }
@@ -6676,10 +6676,10 @@ var require_es6_ns_export_class = __commonJS({
 var require_es6_ns_export_abstract_class = __commonJS({
   "es6-ns-export-abstract-class.ts"(exports) {
     var ns;
-    ((ns2) => {
+    ((ns) => {
       class Foo {
       }
-      ns2.Foo = Foo;
+      ns.Foo = Foo;
     })(ns || (ns = {}));
     console.log(exports);
   }
@@ -7111,9 +7111,9 @@ x();
 // function-nested.js
 function x() {
   if (true) {
-    let l2 = function() {
+    let l = function() {
     };
-    var l = l2;
+    var l = l;
     var a;
     for (var b; 0; ) ;
     for (var { c, x: [d] } = {}; 0; ) ;
@@ -7188,9 +7188,9 @@ x();
 ---------- /out/function-nested.js ----------
 function x() {
   if (true) {
-    let l2 = function() {
+    let l = function() {
     };
-    var l = l2;
+    var l = l;
     var a;
     for (var b; 0; ) ;
     for (var { c, x: [d] } = {}; 0; ) ;

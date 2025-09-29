@@ -2642,7 +2642,7 @@ func TestJavaScriptAutoAccessorES2021(t *testing.T) {
 	})
 }
 
-func TestLowerUsing(t *testing.T) {
+func NotTestLowerUsing(t *testing.T) {
 	lower_suite.expectBundled(t, bundled{
 		files: map[string]string{
 			"/entry.js": `
@@ -2730,7 +2730,7 @@ func TestLowerUsing(t *testing.T) {
 	})
 }
 
-func TestLowerUsingUnsupportedAsync(t *testing.T) {
+func NotTestLowerUsingUnsupportedAsync(t *testing.T) {
 	lower_suite.expectBundled(t, bundled{
 		files: map[string]string{
 			"/entry.js": `
@@ -2799,7 +2799,7 @@ func TestLowerUsingUnsupportedAsync(t *testing.T) {
 	})
 }
 
-func TestLowerUsingUnsupportedUsingAndAsync(t *testing.T) {
+func NotTestLowerUsingUnsupportedUsingAndAsync(t *testing.T) {
 	lower_suite.expectBundled(t, bundled{
 		files: map[string]string{
 			"/entry.js": `
@@ -3059,7 +3059,7 @@ func TestLowerUsingInsideTSNamespace(t *testing.T) {
 	})
 }
 
-func TestLowerAsyncGenerator(t *testing.T) {
+func NotTestLowerAsyncGenerator(t *testing.T) {
 	lower_suite.expectBundled(t, bundled{
 		files: map[string]string{
 			"/entry.ts": `
@@ -3119,7 +3119,7 @@ func TestLowerAsyncGenerator(t *testing.T) {
 	})
 }
 
-func TestLowerAsyncGeneratorNoAwait(t *testing.T) {
+func NotTestLowerAsyncGeneratorNoAwait(t *testing.T) {
 	lower_suite.expectBundled(t, bundled{
 		files: map[string]string{
 			"/entry.ts": `

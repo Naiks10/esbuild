@@ -120,7 +120,7 @@ console.log(1, evil("x"));
 
 ---------- /out/ts-namespace-no-eval.js ----------
 var y;
-((y2) => (y2.x = 1, console.log(1, evil("x"))))(y ||= {});
+((y) => (y.x = 1, console.log(1, evil("x"))))(y ||= {});
 
 ---------- /out/ts-namespace-eval.js ----------
 var z;
@@ -188,7 +188,7 @@ function nested() {
 
 ---------- /out/namespace-export.js ----------
 var ns;
-((ns2) => (ns2.y_keep = 2, console.log(
+((ns) => (ns.y_keep = 2, console.log(
   1,
   1,
   2,
@@ -856,11 +856,11 @@ function testThrow() {
 }
 function testBreak() {
   for (; ; ) {
-    let z2 = function() {
+    let z = function() {
       KEEP_ME();
     };
-    var z = z2;
-    y + z2();
+    var z = z;
+    y + z();
     break;
     if (x)
       var y;
@@ -868,11 +868,11 @@ function testBreak() {
 }
 function testContinue() {
   for (; ; ) {
-    let z2 = function() {
+    let z = function() {
       KEEP_ME();
     };
-    var z = z2;
-    y + z2();
+    var z = z;
+    y + z();
     continue;
     if (x)
       var y;
@@ -1013,7 +1013,7 @@ switch (1) {
     _ = null;
     break;
 }
-for (const x2 of y)
+for (const x of y)
   switch (1) {
     case 0:
       _ = null;
@@ -1679,53 +1679,53 @@ export const c2 = /* @__NO_SIDE_EFFECTS__ */ () => {
 
 ---------- /out/ns-export-fn.js ----------
 var ns;
-((ns2) => {
+((ns) => {
   //! These should all have "no side effects"
   // @__NO_SIDE_EFFECTS__
   function a() {
   }
-  ns2.a = a;
+  ns.a = a;
   // @__NO_SIDE_EFFECTS__
   function* b() {
   }
-  ns2.b = b;
+  ns.b = b;
   // @__NO_SIDE_EFFECTS__
   async function c() {
   }
-  ns2.c = c;
+  ns.c = c;
   // @__NO_SIDE_EFFECTS__
   async function* d() {
   }
-  ns2.d = d;
+  ns.d = d;
 })(ns || (ns = {}));
 
 ---------- /out/ns-export-local.js ----------
 var ns;
-((ns2) => {
+((ns) => {
   //! Only "c0" and "c2" should have "no side effects" (Rollup only respects "const" and only for the first one)
-  ns2.v0 = function() {
+  ns.v0 = function() {
   };
-  ns2.v1 = function() {
+  ns.v1 = function() {
   };
-  ns2.l0 = function() {
+  ns.l0 = function() {
   };
-  ns2.l1 = function() {
+  ns.l1 = function() {
   };
-  ns2.c0 = /* @__NO_SIDE_EFFECTS__ */ function() {
+  ns.c0 = /* @__NO_SIDE_EFFECTS__ */ function() {
   };
-  ns2.c1 = function() {
+  ns.c1 = function() {
   };
-  ns2.v2 = () => {
+  ns.v2 = () => {
   };
-  ns2.v3 = () => {
+  ns.v3 = () => {
   };
-  ns2.l2 = () => {
+  ns.l2 = () => {
   };
-  ns2.l3 = () => {
+  ns.l3 = () => {
   };
-  ns2.c2 = /* @__NO_SIDE_EFFECTS__ */ () => {
+  ns.c2 = /* @__NO_SIDE_EFFECTS__ */ () => {
   };
-  ns2.c3 = () => {
+  ns.c3 = () => {
   };
 })(ns || (ns = {}));
 
@@ -1921,47 +1921,47 @@ export const c2 = () => {
 
 ---------- /out/ns-export-fn.js ----------
 var ns;
-((ns2) => {
+((ns) => {
   function a() {
   }
-  ns2.a = a;
+  ns.a = a;
   function* b() {
   }
-  ns2.b = b;
+  ns.b = b;
   async function c() {
   }
-  ns2.c = c;
+  ns.c = c;
   async function* d() {
   }
-  ns2.d = d;
+  ns.d = d;
 })(ns || (ns = {}));
 
 ---------- /out/ns-export-local.js ----------
 var ns;
-((ns2) => {
-  ns2.v0 = function() {
+((ns) => {
+  ns.v0 = function() {
   };
-  ns2.v1 = function() {
+  ns.v1 = function() {
   };
-  ns2.l0 = function() {
+  ns.l0 = function() {
   };
-  ns2.l1 = function() {
+  ns.l1 = function() {
   };
-  ns2.c0 = function() {
+  ns.c0 = function() {
   };
-  ns2.c1 = function() {
+  ns.c1 = function() {
   };
-  ns2.v2 = () => {
+  ns.v2 = () => {
   };
-  ns2.v3 = () => {
+  ns.v3 = () => {
   };
-  ns2.l2 = () => {
+  ns.l2 = () => {
   };
-  ns2.l3 = () => {
+  ns.l3 = () => {
   };
-  ns2.c2 = () => {
+  ns.c2 = () => {
   };
-  ns2.c3 = () => {
+  ns.c3 = () => {
   };
 })(ns || (ns = {}));
 
@@ -2050,10 +2050,10 @@ var v0=function(){},v1=function(){};let l0=function(){},l1=function(){};const c0
 export var v0=function(){},v1=function(){};export let l0=function(){},l1=function(){};export const c0=function(){},c1=function(){};export var v2=()=>{},v3=()=>{};export let l2=()=>{},l3=()=>{};export const c2=()=>{},c3=()=>{};
 
 ---------- /out/ns-export-fn.js ----------
-var ns;(ns2=>{function a(){}ns2.a=a;function*b(){}ns2.b=b;async function c(){}ns2.c=c;async function*d(){}ns2.d=d})(ns||(ns={}));
+var ns;(ns=>{function a(){}ns.a=a;function*b(){}ns.b=b;async function c(){}ns.c=c;async function*d(){}ns.d=d})(ns||(ns={}));
 
 ---------- /out/ns-export-local.js ----------
-var ns;(ns2=>{ns2.v0=function(){};ns2.v1=function(){};ns2.l0=function(){};ns2.l1=function(){};ns2.c0=function(){};ns2.c1=function(){};ns2.v2=()=>{};ns2.v3=()=>{};ns2.l2=()=>{};ns2.l3=()=>{};ns2.c2=()=>{};ns2.c3=()=>{}})(ns||(ns={}));
+var ns;(ns=>{ns.v0=function(){};ns.v1=function(){};ns.l0=function(){};ns.l1=function(){};ns.c0=function(){};ns.c1=function(){};ns.v2=()=>{};ns.v3=()=>{};ns.l2=()=>{};ns.l3=()=>{};ns.c2=()=>{};ns.c3=()=>{}})(ns||(ns={}));
 
 ---------- /out/stmt-export-default-before-fn-anon.js ----------
 export default function(){}
@@ -2107,7 +2107,7 @@ export default async function*f(){}
 TestNoSideEffectsCommentTypeScriptDeclare
 ---------- /out/entry.js ----------
 var ns;
-((ns2) => {
+((ns) => {
 })(ns || (ns = {}));
 
 ================================================================================

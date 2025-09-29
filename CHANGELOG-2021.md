@@ -770,16 +770,16 @@ In addition to the breaking changes above, the following changes are also includ
 
     // Old output
     var x;
-    (function(x2) {
-      x2[x2["y"] = 1] = "y";
-      x2[x2["z"] = 2] = "z";
+    (function(x) {
+      x[x["y"] = 1] = "y";
+      x[x["z"] = 2] = "z";
     })(x || (x = {}));
 
     // New output
-    var x = /* @__PURE__ */ ((x2) => {
-      x2[x2["y"] = 1] = "y";
-      x2[x2["z"] = 2] = "z";
-      return x2;
+    var x = /* @__PURE__ */ ((x) => {
+      x[x["y"] = 1] = "y";
+      x[x["z"] = 2] = "z";
+      return x;
     })(x || {});
     ```
 

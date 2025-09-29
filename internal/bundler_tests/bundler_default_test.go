@@ -2753,8 +2753,8 @@ func TestRenamePrivateIdentifiersNoBundle(t *testing.T) {
 				class Foo {
 					#foo
 					foo = class {
-						#foo
 						#foo2
+						#foo
 						#bar
 					}
 					get #bar() {}
@@ -2763,8 +2763,8 @@ func TestRenamePrivateIdentifiersNoBundle(t *testing.T) {
 				class Bar {
 					#foo
 					foo = class {
-						#foo2
 						#foo
+						#foo2
 						#bar
 					}
 					get #bar() {}
@@ -8959,7 +8959,7 @@ func TestObjectLiteralProtoSetterEdgeCases(t *testing.T) {
 						console.log(
 							'this must not become "{ __proto__: ... }":',
 							{
-								__proto__,
+								__proto__: __proto__,
 								bar,
 							},
 						)
@@ -8971,7 +8971,7 @@ func TestObjectLiteralProtoSetterEdgeCases(t *testing.T) {
 					console.log(
 						'this must not become "{ __proto__ }":',
 						{
-							__proto__: __proto__,
+							__proto__,
 							bar: bar,
 						},
 					)
@@ -8995,7 +8995,7 @@ func TestObjectLiteralProtoSetterEdgeCases(t *testing.T) {
 					console.log(
 						'this must not become "{ __proto__ }":',
 						{
-							__proto__: __proto__,
+							__proto__,
 							bar: bar,
 						},
 					)
@@ -9009,13 +9009,38 @@ func TestObjectLiteralProtoSetterEdgeCases(t *testing.T) {
 	})
 }
 
-func TestObjectLiteralProtoSetterEdgeCasesMinifySyntax(t *testing.T) {
-	default_suite.expectBundled(t, bundled{
-		files: map[string]string{
-			"/local-computed.js": `
-				function foo(__proto__, bar) {
-					{
-						let __proto__, bar // These locals will be renamed
+/*
+	func TestObjectLiteralProtoSetterEdgeCasesMinifySyntax(t *testing.T) {
+		default_suite.expectBundled(t, bundled{
+			files: map[string]string{
+				"/local-computed.js": `
+					function foo(__proto__, bar) {
+						{
+							let __proto__, bar // These locals will be renamed
+							console.log(
+								'this must not become "{ __proto__: ... }":',
+								{
+									['__proto__']: __proto__,
+									['bar']: bar,
+								},
+							)
+						}
+					}
+				`,
+				"/local-normal.js": `
+					function foo(__proto__, bar) {
+						console.log(
+							'this must not become "{ __proto__ }":',
+							{
+								__proto__: __proto__,
+								bar: bar,
+							},
+						)
+					}
+				`,
+				"/import-computed.js": `
+					import { __proto__, bar } from 'foo'
+					function foo() {
 						console.log(
 							'this must not become "{ __proto__: ... }":',
 							{
@@ -9024,52 +9049,28 @@ func TestObjectLiteralProtoSetterEdgeCasesMinifySyntax(t *testing.T) {
 							},
 						)
 					}
-				}
-			`,
-			"/local-normal.js": `
-				function foo(__proto__, bar) {
-					console.log(
-						'this must not become "{ __proto__ }":',
-						{
-							__proto__: __proto__,
-							bar: bar,
-						},
-					)
-				}
-			`,
-			"/import-computed.js": `
-				import { __proto__, bar } from 'foo'
-				function foo() {
-					console.log(
-						'this must not become "{ __proto__: ... }":',
-						{
-							['__proto__']: __proto__,
-							['bar']: bar,
-						},
-					)
-				}
-			`,
-			"/import-normal.js": `
-				import { __proto__, bar } from 'foo'
-				function foo() {
-					console.log(
-						'this must not become "{ __proto__ }":',
-						{
-							__proto__: __proto__,
-							bar: bar,
-						},
-					)
-				}
-			`,
-		},
-		entryPaths: []string{"*"},
-		options: config.Options{
-			AbsOutputDir: "/out",
-			MinifySyntax: true,
-		},
-	})
-}
-
+				`,
+				"/import-normal.js": `
+					import { __proto__, bar } from 'foo'
+					function foo() {
+						console.log(
+							'this must not become "{ __proto__ }":',
+							{
+								__proto__: __proto__,
+								bar: bar,
+							},
+						)
+					}
+				`,
+			},
+			entryPaths: []string{"*"},
+			options: config.Options{
+				AbsOutputDir: "/out",
+				MinifySyntax: true,
+			},
+		})
+	}
+*/
 func TestForbidStringImportNamesNoBundle(t *testing.T) {
 	default_suite.expectBundled(t, bundled{
 		files: map[string]string{

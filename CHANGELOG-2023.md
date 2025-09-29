@@ -1782,22 +1782,22 @@ This changelog documents all esbuild versions published in the year 2023 (versio
 
     // Old output (with --keep-names --target=es2021)
     var X;
-    ((X2) => {
+    ((X) => {
       const _Y = class _Y {
       };
       __name(_Y, "Y");
       let Y = _Y;
-      X2._Y = _Y;
+      X._Y = _Y;
     })(X || (X = {}));
 
     // New output (with --keep-names --target=es2021)
     var X;
-    ((X2) => {
+    ((X) => {
       const _Y = class _Y {
       };
       __name(_Y, "Y");
       let Y = _Y;
-      X2.Y = _Y;
+      X.Y = _Y;
     })(X || (X = {}));
     ```
 
@@ -3343,7 +3343,7 @@ The breaking changes in this release mainly focus on fixing some long-standing i
 
     // Old output (with --tree-shaking=true)
     export const foo = () => Foo.FOO;
-    var Foo = /* @__PURE__ */ ((Foo2) => {
+    var Foo = /* @__PURE__ */ ((Foo) => {
       Foo2[Foo2["FOO"] = 0] = "FOO";
       return Foo2;
     })(Foo || {});

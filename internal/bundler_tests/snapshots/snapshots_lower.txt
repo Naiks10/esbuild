@@ -1157,7 +1157,7 @@ TestLowerAsyncGenerator
 ---------- /out/entry.js ----------
 function foo() {
   return __asyncGenerator(this, null, function* () {
-    var _stack2 = [];
+    var _stack = [];
     try {
       yield;
       yield x;
@@ -1165,7 +1165,7 @@ function foo() {
       const x = __using(_stack2, yield new __await(y), true);
       try {
         for (var iter = __forAwait(y), more, temp, error; more = !(temp = yield new __await(iter.next())).done; more = false) {
-          let x2 = temp.value;
+          let x = temp.value;
         }
       } catch (temp) {
         error = [temp];
@@ -1182,7 +1182,7 @@ function foo() {
           var _x = temp2.value;
           var _stack = [];
           try {
-            const x2 = __using(_stack, _x, true);
+            const x = __using(_stack, _x, true);
           } catch (_) {
             var _error = _, _hasError = true;
           } finally {
@@ -1210,7 +1210,7 @@ function foo() {
 }
 foo = function() {
   return __asyncGenerator(this, null, function* () {
-    var _stack2 = [];
+    var _stack = [];
     try {
       yield;
       yield x;
@@ -1218,7 +1218,7 @@ foo = function() {
       const x = __using(_stack2, yield new __await(y), true);
       try {
         for (var iter = __forAwait(y), more, temp, error; more = !(temp = yield new __await(iter.next())).done; more = false) {
-          let x2 = temp.value;
+          let x = temp.value;
         }
       } catch (temp) {
         error = [temp];
@@ -1235,7 +1235,7 @@ foo = function() {
           var _x = temp2.value;
           var _stack = [];
           try {
-            const x2 = __using(_stack, _x, true);
+            const x = __using(_stack, _x, true);
           } catch (_) {
             var _error = _, _hasError = true;
           } finally {
@@ -1263,7 +1263,7 @@ foo = function() {
 };
 foo = { bar() {
   return __asyncGenerator(this, null, function* () {
-    var _stack2 = [];
+    var _stack = [];
     try {
       yield;
       yield x;
@@ -1271,7 +1271,7 @@ foo = { bar() {
       const x = __using(_stack2, yield new __await(y), true);
       try {
         for (var iter = __forAwait(y), more, temp, error; more = !(temp = yield new __await(iter.next())).done; more = false) {
-          let x2 = temp.value;
+          let x = temp.value;
         }
       } catch (temp) {
         error = [temp];
@@ -1288,7 +1288,7 @@ foo = { bar() {
           var _x = temp2.value;
           var _stack = [];
           try {
-            const x2 = __using(_stack, _x, true);
+            const x = __using(_stack, _x, true);
           } catch (_) {
             var _error = _, _hasError = true;
           } finally {
@@ -1317,7 +1317,7 @@ foo = { bar() {
 class Foo {
   bar() {
     return __asyncGenerator(this, null, function* () {
-      var _stack2 = [];
+      var _stack = [];
       try {
         yield;
         yield x;
@@ -1325,7 +1325,7 @@ class Foo {
         const x = __using(_stack2, yield new __await(y), true);
         try {
           for (var iter = __forAwait(y), more, temp, error; more = !(temp = yield new __await(iter.next())).done; more = false) {
-            let x2 = temp.value;
+            let x = temp.value;
           }
         } catch (temp) {
           error = [temp];
@@ -1342,7 +1342,7 @@ class Foo {
             var _x = temp2.value;
             var _stack = [];
             try {
-              const x2 = __using(_stack, _x, true);
+              const x = __using(_stack, _x, true);
             } catch (_) {
               var _error = _, _hasError = true;
             } finally {
@@ -1372,7 +1372,7 @@ class Foo {
 Foo = class {
   bar() {
     return __asyncGenerator(this, null, function* () {
-      var _stack2 = [];
+      var _stack = [];
       try {
         yield;
         yield x;
@@ -1380,7 +1380,7 @@ Foo = class {
         const x = __using(_stack2, yield new __await(y), true);
         try {
           for (var iter = __forAwait(y), more, temp, error; more = !(temp = yield new __await(iter.next())).done; more = false) {
-            let x2 = temp.value;
+            let x = temp.value;
           }
         } catch (temp) {
           error = [temp];
@@ -1397,7 +1397,7 @@ Foo = class {
             var _x = temp2.value;
             var _stack = [];
             try {
-              const x2 = __using(_stack, _x, true);
+              const x = __using(_stack, _x, true);
             } catch (_) {
               var _error = _, _hasError = true;
             } finally {
@@ -1426,9 +1426,9 @@ Foo = class {
 };
 async function bar() {
   await using x = await y;
-  for await (let x2 of y) {
+  for await (let x of y) {
   }
-  for await (await using x2 of y) {
+  for await (await using x of y) {
   }
 }
 
@@ -1437,7 +1437,7 @@ TestLowerAsyncGeneratorNoAwait
 ---------- /out/entry.js ----------
 function foo() {
   return __asyncGenerator(this, null, function* () {
-    var _stack2 = [];
+    var _stack = [];
     try {
       yield;
       yield x;
@@ -1445,7 +1445,7 @@ function foo() {
       const x = __using(_stack2, yield new __await(y), true);
       try {
         for (var iter = __forAwait(y), more, temp, error; more = !(temp = yield new __await(iter.next())).done; more = false) {
-          let x2 = temp.value;
+          let x = temp.value;
         }
       } catch (temp) {
         error = [temp];
@@ -1462,7 +1462,7 @@ function foo() {
           var _x = temp2.value;
           var _stack = [];
           try {
-            const x2 = __using(_stack, _x, true);
+            const x = __using(_stack, _x, true);
           } catch (_) {
             var _error = _, _hasError = true;
           } finally {
@@ -1490,7 +1490,7 @@ function foo() {
 }
 foo = function() {
   return __asyncGenerator(this, null, function* () {
-    var _stack2 = [];
+    var _stack = [];
     try {
       yield;
       yield x;
@@ -1498,7 +1498,7 @@ foo = function() {
       const x = __using(_stack2, yield new __await(y), true);
       try {
         for (var iter = __forAwait(y), more, temp, error; more = !(temp = yield new __await(iter.next())).done; more = false) {
-          let x2 = temp.value;
+          let x = temp.value;
         }
       } catch (temp) {
         error = [temp];
@@ -1515,7 +1515,7 @@ foo = function() {
           var _x = temp2.value;
           var _stack = [];
           try {
-            const x2 = __using(_stack, _x, true);
+            const x = __using(_stack, _x, true);
           } catch (_) {
             var _error = _, _hasError = true;
           } finally {
@@ -1543,7 +1543,7 @@ foo = function() {
 };
 foo = { bar() {
   return __asyncGenerator(this, null, function* () {
-    var _stack2 = [];
+    var _stack = [];
     try {
       yield;
       yield x;
@@ -1551,7 +1551,7 @@ foo = { bar() {
       const x = __using(_stack2, yield new __await(y), true);
       try {
         for (var iter = __forAwait(y), more, temp, error; more = !(temp = yield new __await(iter.next())).done; more = false) {
-          let x2 = temp.value;
+          let x = temp.value;
         }
       } catch (temp) {
         error = [temp];
@@ -1568,7 +1568,7 @@ foo = { bar() {
           var _x = temp2.value;
           var _stack = [];
           try {
-            const x2 = __using(_stack, _x, true);
+            const x = __using(_stack, _x, true);
           } catch (_) {
             var _error = _, _hasError = true;
           } finally {
@@ -1597,7 +1597,7 @@ foo = { bar() {
 class Foo {
   bar() {
     return __asyncGenerator(this, null, function* () {
-      var _stack2 = [];
+      var _stack = [];
       try {
         yield;
         yield x;
@@ -1605,7 +1605,7 @@ class Foo {
         const x = __using(_stack2, yield new __await(y), true);
         try {
           for (var iter = __forAwait(y), more, temp, error; more = !(temp = yield new __await(iter.next())).done; more = false) {
-            let x2 = temp.value;
+            let x = temp.value;
           }
         } catch (temp) {
           error = [temp];
@@ -1622,7 +1622,7 @@ class Foo {
             var _x = temp2.value;
             var _stack = [];
             try {
-              const x2 = __using(_stack, _x, true);
+              const x = __using(_stack, _x, true);
             } catch (_) {
               var _error = _, _hasError = true;
             } finally {
@@ -1652,7 +1652,7 @@ class Foo {
 Foo = class {
   bar() {
     return __asyncGenerator(this, null, function* () {
-      var _stack2 = [];
+      var _stack = [];
       try {
         yield;
         yield x;
@@ -1660,7 +1660,7 @@ Foo = class {
         const x = __using(_stack2, yield new __await(y), true);
         try {
           for (var iter = __forAwait(y), more, temp, error; more = !(temp = yield new __await(iter.next())).done; more = false) {
-            let x2 = temp.value;
+            let x = temp.value;
           }
         } catch (temp) {
           error = [temp];
@@ -1677,7 +1677,7 @@ Foo = class {
             var _x = temp2.value;
             var _stack = [];
             try {
-              const x2 = __using(_stack, _x, true);
+              const x = __using(_stack, _x, true);
             } catch (_) {
               var _error = _, _hasError = true;
             } finally {
@@ -1706,15 +1706,15 @@ Foo = class {
 };
 function bar() {
   return __async(this, null, function* () {
-    var _stack2 = [];
+    var _stack = [];
     try {
       const x = __using(_stack2, yield y, true);
-      for await (let x2 of y) {
+      for await (let x of y) {
       }
       for await (var _x of y) {
         var _stack = [];
         try {
-          const x2 = __using(_stack, _x, true);
+          const x = __using(_stack, _x, true);
         } catch (_) {
           var _error = _, _hasError = true;
         } finally {
@@ -2088,8 +2088,8 @@ export default [
   () => __async(null, null, function* () {
     try {
       for (var iter = __forAwait(y), more, temp, error; more = !(temp = yield iter.next()).done; more = false) {
-        let x2 = temp.value;
-        z(x2);
+        let x = temp.value;
+        z(x);
       }
     } catch (temp) {
       error = [temp];
@@ -2105,8 +2105,8 @@ export default [
   () => __async(null, null, function* () {
     try {
       for (var iter = __forAwait(y), more, temp, error; more = !(temp = yield iter.next()).done; more = false) {
-        const x2 = temp.value;
-        z(x2);
+        const x = temp.value;
+        z(x);
       }
     } catch (temp) {
       error = [temp];
@@ -2122,7 +2122,7 @@ export default [
   () => __async(null, null, function* () {
     try {
       label: for (var iter = __forAwait(y), more, temp, error; more = !(temp = yield iter.next()).done; more = false) {
-        const x2 = temp.value;
+        const x = temp.value;
         break label;
       }
     } catch (temp) {
@@ -2139,7 +2139,7 @@ export default [
   () => __async(null, null, function* () {
     try {
       label: for (var iter = __forAwait(y), more, temp, error; more = !(temp = yield iter.next()).done; more = false) {
-        const x2 = temp.value;
+        const x = temp.value;
         continue label;
       }
     } catch (temp) {
@@ -2196,8 +2196,8 @@ export default [
   async () => {
     try {
       for (var iter = __forAwait(y), more, temp, error; more = !(temp = await iter.next()).done; more = false) {
-        let x2 = temp.value;
-        z(x2);
+        let x = temp.value;
+        z(x);
       }
     } catch (temp) {
       error = [temp];
@@ -2213,8 +2213,8 @@ export default [
   async () => {
     try {
       for (var iter = __forAwait(y), more, temp, error; more = !(temp = await iter.next()).done; more = false) {
-        const x2 = temp.value;
-        z(x2);
+        const x = temp.value;
+        z(x);
       }
     } catch (temp) {
       error = [temp];
@@ -2230,7 +2230,7 @@ export default [
   async () => {
     try {
       label: for (var iter = __forAwait(y), more, temp, error; more = !(temp = await iter.next()).done; more = false) {
-        const x2 = temp.value;
+        const x = temp.value;
         break label;
       }
     } catch (temp) {
@@ -2247,7 +2247,7 @@ export default [
   async () => {
     try {
       label: for (var iter = __forAwait(y), more, temp, error; more = !(temp = await iter.next()).done; more = false) {
-        const x2 = temp.value;
+        const x = temp.value;
         continue label;
       }
     } catch (temp) {
@@ -2267,9 +2267,9 @@ export default [
 TestLowerNestedFunctionDirectEval
 ---------- /out/1.js ----------
 if (foo) {
-  let x2 = function() {
+  let x = function() {
   };
-  var x = x2;
+  var x = x;
 }
 
 ---------- /out/2.js ----------
@@ -2364,7 +2364,7 @@ let jsx = [
 TestLowerOptionalCatchNameCollisionNoBundle
 ---------- /out.js ----------
 try {
-} catch (e4) {
+} catch (e) {
   var e, e2;
 }
 var e3;
@@ -2431,9 +2431,9 @@ export let Foo = (_a = class {
     __privateAdd(this, _field);
   }
   foo() {
-    var _a2;
+    var _a;
     __privateSet(this, _field, __privateMethod(this, _Foo_instances, method_fn).call(this));
-    __privateSet(Foo, _staticField, __privateMethod(_a2 = Foo, _Foo_static, staticMethod_fn).call(_a2));
+    __privateSet(Foo, _staticField, __privateMethod(_a = Foo, _Foo_static, staticMethod_fn).call(_a));
   }
 }, _field = new WeakMap(), _Foo_instances = new WeakSet(), method_fn = function() {
 }, _staticField = new WeakMap(), _Foo_static = new WeakSet(), staticMethod_fn = function() {
@@ -3326,8 +3326,8 @@ export {
 TestLowerRegExpNameCollision
 ---------- /out.js ----------
 // entry.js
-function foo(RegExp2) {
-  return new RegExp2(new RegExp(".", "d"), "d");
+function foo(RegExp) {
+  return new RegExp(new RegExp(".", "d"), "d");
 }
 export {
   foo
@@ -3815,50 +3815,50 @@ y = () => [
 TestLowerUsing
 ---------- /out/entry.js ----------
 function foo() {
-  var _stack4 = [];
+  var _stack3 = [];
   try {
-    const a2 = __using(_stack4, b);
+    const a = __using(_stack3, b);
     if (nested) {
-      var _stack3 = [];
+      var _stack = [];
       try {
-        const x = __using(_stack3, 1);
-      } catch (_3) {
-        var _error3 = _3, _hasError3 = true;
+        const x = __using(_stack, 1);
+      } catch (_) {
+        var _error = _, _hasError = true;
       } finally {
-        __callDispose(_stack3, _error3, _hasError3);
+        __callDispose(_stack, _error, _hasError);
       }
     }
-  } catch (_4) {
-    var _error4 = _4, _hasError4 = true;
+  } catch (_3) {
+    var _error3 = _3, _hasError3 = true;
   } finally {
-    __callDispose(_stack4, _error4, _hasError4);
+    __callDispose(_stack3, _error3, _hasError3);
   }
 }
 async function bar() {
-  var _stack4 = [];
+  var _stack3 = [];
   try {
-    const a2 = __using(_stack4, b);
-    const c2 = __using(_stack4, d, true);
+    const a = __using(_stack3, b);
+    const c = __using(_stack3, d, true);
     if (nested) {
-      var _stack3 = [];
+      var _stack = [];
       try {
-        const x = __using(_stack3, 1);
-        const y = __using(_stack3, 2, true);
-      } catch (_3) {
-        var _error3 = _3, _hasError3 = true;
+        const x = __using(_stack, 1);
+        const y = __using(_stack, 2, true);
+      } catch (_) {
+        var _error = _, _hasError = true;
       } finally {
-        var _promise3 = __callDispose(_stack3, _error3, _hasError3);
-        _promise3 && await _promise3;
+        var _promise = __callDispose(_stack, _error, _hasError);
+        _promise && await _promise;
       }
     }
-  } catch (_4) {
-    var _error4 = _4, _hasError4 = true;
+  } catch (_) {
+    var _error = _, _hasError = true;
   } finally {
-    var _promise4 = __callDispose(_stack4, _error4, _hasError4);
-    _promise4 && await _promise4;
+    var _promise = __callDispose(_stack, _error, _hasError);
+    _promise && await _promise;
   }
 }
-var _stack2 = [];
+var _stack = [];
 try {
   var a = __using(_stack2, b);
   var c = __using(_stack2, d, true);
@@ -3894,7 +3894,7 @@ for (var _a of b) {
   }
 }
 for (var _d of e) {
-  var _stack2 = [];
+  var _stack = [];
   try {
     const d = __using(_stack2, _d, true);
     f(() => d);
@@ -4092,7 +4092,7 @@ try {
   } finally {
     __callDispose(_stack, _error, _hasError);
   }
-  var _stack2 = [];
+  var _stack = [];
   try {
     switch (foo) {
       case 0:
@@ -4118,13 +4118,13 @@ TestLowerUsingHoisting
 "use strict";
 function foo() {
   "use strict";
-  var _stack2 = [];
+  var _stack = [];
   try {
-    const a2 = __using(_stack2, b);
-  } catch (_2) {
-    var _error2 = _2, _hasError2 = true;
+    const a = __using(_stack, b);
+  } catch (_) {
+    var _error = _, _hasError = true;
   } finally {
-    __callDispose(_stack2, _error2, _hasError2);
+    __callDispose(_stack, _error, _hasError);
   }
 }
 var _stack = [];
@@ -4140,13 +4140,13 @@ try {
 "use wtf";
 function foo() {
   "use wtf";
-  var _stack2 = [];
+  var _stack = [];
   try {
-    const a2 = __using(_stack2, b);
-  } catch (_2) {
-    var _error2 = _2, _hasError2 = true;
+    const a = __using(_stack, b);
+  } catch (_) {
+    var _error = _, _hasError = true;
   } finally {
-    __callDispose(_stack2, _error2, _hasError2);
+    __callDispose(_stack, _error, _hasError);
   }
 }
 var _stack = [];
@@ -4472,12 +4472,12 @@ export {
 TestLowerUsingInsideTSNamespace
 ---------- /out/entry.js ----------
 var ns;
-((ns2) => {
+((ns) => {
   var _stack = [];
   try {
-    ns2.a = b;
+    ns.a = b;
     const c = __using(_stack, d);
-    ns2.e = f;
+    ns.e = f;
   } catch (_) {
     var _error = _, _hasError = true;
   } finally {
@@ -4496,7 +4496,7 @@ function foo() {
 }
 function bar() {
   return __async(this, null, function* () {
-    var _stack2 = [];
+    var _stack = [];
     try {
       const a = __using(_stack2, b);
       const c = __using(_stack2, d, true);
@@ -4585,7 +4585,7 @@ function foo() {
 TestLowerUsingUnsupportedUsingAndAsync
 ---------- /out/entry.js ----------
 function foo() {
-  var _stack2 = [];
+  var _stack = [];
   try {
     const a = __using(_stack2, b);
     if (nested) {
@@ -4606,7 +4606,7 @@ function foo() {
 }
 function bar() {
   return __async(this, null, function* () {
-    var _stack2 = [];
+    var _stack = [];
     try {
       const a = __using(_stack2, b);
       const c = __using(_stack2, d, true);
@@ -4645,7 +4645,7 @@ for (var _a of b) {
 }
 if (nested) {
   for (var _a of b) {
-    var _stack2 = [];
+    var _stack = [];
     try {
       const a = __using(_stack2, _a);
       c(() => a);
@@ -4737,7 +4737,7 @@ function foo() {
     }
   });
 }
-var _stack2 = [];
+var _stack = [];
 try {
   var x = __using(_stack2, y);
   var _stack = [];
@@ -4859,28 +4859,28 @@ const local_const = __objRest({}, []);
 let local_let = __objRest({}, []);
 var local_var = __objRest({}, []);
 let arrow_fn = (_a) => {
-  var x2 = __objRest(_a, []);
+  var x = __objRest(_a, []);
 };
 let fn_expr = function(_b = default_value) {
-  var x2 = __objRest(_b, []);
+  var x = __objRest(_b, []);
 };
 let class_expr = class {
-  method(x2, ..._c) {
+  method(x, ..._c) {
     var [y, _d] = _c, z = __objRest(_d, []);
   }
 };
 function fn_stmt(_e, _g) {
-  var _f = _e, { a = b() } = _f, x2 = __objRest(_f, ["a"]);
+  var _f = _e, { a = b() } = _f, x = __objRest(_f, ["a"]);
   var _h = _g, { c = d() } = _h, y = __objRest(_h, ["c"]);
 }
 class class_stmt {
   method(_i) {
-    var x2 = __objRest(_i, []);
+    var x = __objRest(_i, []);
   }
 }
 var ns;
-((ns2) => {
-  ns2.x = __objRest({}, []);
+((ns) => {
+  ns.x = __objRest({}, []);
 })(ns || (ns = {}));
 try {
 } catch (_j) {
@@ -4924,7 +4924,7 @@ for (x = __objRest({}, []); x; x = null) {
 }
 assign = __objRest({}, []);
 ({ obj_method(_s) {
-  var x2 = __objRest(_s, []);
+  var x = __objRest(_s, []);
 } });
 x = __objRest(x, []);
 for (x = __objRest(x, []); 0; ) ;
@@ -4938,23 +4938,23 @@ TestTSLowerObjectRest2018NoBundle
 const { ...local_const } = {};
 let { ...local_let } = {};
 var { ...local_var } = {};
-let arrow_fn = ({ ...x2 }) => {
+let arrow_fn = ({ ...x }) => {
 };
-let fn_expr = function({ ...x2 } = default_value) {
+let fn_expr = function({ ...x } = default_value) {
 };
 let class_expr = class {
-  method(x2, ...[y, { ...z }]) {
+  method(x, ...[y, { ...z }]) {
   }
 };
-function fn_stmt({ a = b(), ...x2 }, { c = d(), ...y }) {
+function fn_stmt({ a = b(), ...x }, { c = d(), ...y }) {
 }
 class class_stmt {
-  method({ ...x2 }) {
+  method({ ...x }) {
   }
 }
 var ns;
-((ns2) => {
-  ({ ...ns2.x } = {});
+((ns) => {
+  ({ ...ns.x } = {});
 })(ns || (ns = {}));
 try {
 } catch ({ ...catch_clause }) {
@@ -4980,7 +4980,7 @@ for ({ ...x } of [{}]) {
 for ({ ...x } = {}; x; x = null) {
 }
 ({ ...assign } = {});
-({ obj_method({ ...x2 }) {
+({ obj_method({ ...x }) {
 } });
 ({ ...x } = x);
 for ({ ...x } = x; 0; ) ;

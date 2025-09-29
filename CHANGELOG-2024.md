@@ -848,11 +848,11 @@ This release doesn't contain any deliberately-breaking changes. However, it cont
     enum Foo {}
 
     // Old output (with --loader=ts)
-    var Foo = /* @__PURE__ */ ((Foo2) => {
+    var Foo = /* @__PURE__ */ ((Foo) => {
     })(Foo || {});
 
     // New output (with --loader=ts)
-    var Foo = /* @__PURE__ */ ((Foo2) => {
+    var Foo = /* @__PURE__ */ ((Foo) => {
       return Foo2;
     })(Foo || {});
     ```
