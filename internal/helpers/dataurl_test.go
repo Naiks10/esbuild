@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/evanw/esbuild/internal/helpers"
+	"github.com/txix-open/esbuild/internal/helpers"
 )
 
 func TestEncodeDataURL(t *testing.T) {

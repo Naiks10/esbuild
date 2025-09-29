@@ -15,13 +15,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/evanw/esbuild/internal/cli_helpers"
-	"github.com/evanw/esbuild/internal/config"
-	"github.com/evanw/esbuild/internal/fs"
-	"github.com/evanw/esbuild/internal/helpers"
-	"github.com/evanw/esbuild/internal/logger"
-	"github.com/evanw/esbuild/pkg/api"
-	"github.com/evanw/esbuild/pkg/cli"
+	"github.com/txix-open/esbuild/internal/cli_helpers"
+	"github.com/txix-open/esbuild/internal/config"
+	"github.com/txix-open/esbuild/internal/fs"
+	"github.com/txix-open/esbuild/internal/helpers"
+	"github.com/txix-open/esbuild/internal/logger"
+	"github.com/txix-open/esbuild/pkg/api"
+	"github.com/txix-open/esbuild/pkg/cli"
 )
 
 type responseCallback func(interface{})

@@ -3,11 +3,11 @@ package js_parser
 import (
 	"fmt"
 
-	"github.com/evanw/esbuild/internal/compat"
-	"github.com/evanw/esbuild/internal/helpers"
-	"github.com/evanw/esbuild/internal/js_ast"
-	"github.com/evanw/esbuild/internal/js_lexer"
-	"github.com/evanw/esbuild/internal/logger"
+	"github.com/txix-open/esbuild/internal/compat"
+	"github.com/txix-open/esbuild/internal/helpers"
+	"github.com/txix-open/esbuild/internal/js_ast"
+	"github.com/txix-open/esbuild/internal/js_lexer"
+	"github.com/txix-open/esbuild/internal/logger"
 )
 
 type jsonParser struct {

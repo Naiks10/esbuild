@@ -5,10 +5,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/evanw/esbuild/internal/ast"
-	"github.com/evanw/esbuild/internal/compat"
-	"github.com/evanw/esbuild/internal/helpers"
-	"github.com/evanw/esbuild/internal/logger"
+	"github.com/txix-open/esbuild/internal/ast"
+	"github.com/txix-open/esbuild/internal/compat"
+	"github.com/txix-open/esbuild/internal/helpers"
+	"github.com/txix-open/esbuild/internal/logger"
 )
 
 type HelperContext struct {

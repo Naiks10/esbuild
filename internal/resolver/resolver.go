@@ -10,14 +10,14 @@ import (
 	"sync"
 	"syscall"
 
-	"github.com/evanw/esbuild/internal/ast"
-	"github.com/evanw/esbuild/internal/cache"
-	"github.com/evanw/esbuild/internal/compat"
-	"github.com/evanw/esbuild/internal/config"
-	"github.com/evanw/esbuild/internal/fs"
-	"github.com/evanw/esbuild/internal/helpers"
-	"github.com/evanw/esbuild/internal/js_ast"
-	"github.com/evanw/esbuild/internal/logger"
+	"github.com/txix-open/esbuild/internal/ast"
+	"github.com/txix-open/esbuild/internal/cache"
+	"github.com/txix-open/esbuild/internal/compat"
+	"github.com/txix-open/esbuild/internal/config"
+	"github.com/txix-open/esbuild/internal/fs"
+	"github.com/txix-open/esbuild/internal/helpers"
+	"github.com/txix-open/esbuild/internal/js_ast"
+	"github.com/txix-open/esbuild/internal/logger"
 )
 
 var defaultMainFields = map[config.Platform][]string{
@@ -400,7 +400,7 @@ func (res *Resolver) Resolve(sourceDir string, importPath string, kind ast.Impor
 				// file system instead of as a built-in module. For example, "util"
 				// is node's built-in module while "util/" is one on the file system.
 				// Leaving the trailing slash in place causes problems for people:
-				// https://github.com/evanw/esbuild/issues/2730. It should be ok to
+				// https://github.com/txix-open/esbuild/issues/2730. It should be ok to
 				// always strip the trailing slash even when using the alias feature
 				// to swap one package for another (except when you swap a reference
 				// to one built-in node module with another but really why would you
@@ -1326,7 +1326,7 @@ func (r resolverQuery) parseTSConfigFromSource(source logger.Source, visited map
 					// version of node's module resolution algorithm. The Yarn PnP
 					// specification says to use node's module resolution algorithm verbatim
 					// but that isn't what Yarn actually does. See this for more info:
-					// https://github.com/evanw/esbuild/issues/2473#issuecomment-1216774461
+					// https://github.com/txix-open/esbuild/issues/2473#issuecomment-1216774461
 					if entries, _, dirErr := r.fs.ReadDirectory(result.pkgDirPath); dirErr == nil {
 						if entry, _ := entries.Get("package.json"); entry != nil && entry.Kind(r.fs) == fs.FileEntry {
 							// Check the "exports" map
@@ -2320,7 +2320,7 @@ func (r resolverQuery) esmResolveAlgorithm(
 		// Treat entry points as imports instead of requires for consistency with
 		// Webpack and Rollup. More information:
 		//
-		// * https://github.com/evanw/esbuild/issues/1956
+		// * https://github.com/txix-open/esbuild/issues/1956
 		// * https://github.com/nodejs/node/issues/41686
 		// * https://github.com/evanw/entry-point-resolve-test
 		//
@@ -2414,7 +2414,7 @@ func (r resolverQuery) loadNodeModules(importPath string, dirInfo *dirInfo, forb
 			// version of node's module resolution algorithm. The Yarn PnP
 			// specification says to use node's module resolution algorithm verbatim
 			// but that isn't what Yarn actually does. See this for more info:
-			// https://github.com/evanw/esbuild/issues/2473#issuecomment-1216774461
+			// https://github.com/txix-open/esbuild/issues/2473#issuecomment-1216774461
 			if pkgDirInfo := r.dirInfoCached(result.pkgDirPath); pkgDirInfo != nil {
 				// Check the "exports" map
 				if packageJSON := pkgDirInfo.packageJSON; packageJSON != nil && packageJSON.exportsMap != nil {

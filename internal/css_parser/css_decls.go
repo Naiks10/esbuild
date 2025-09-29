@@ -3,10 +3,10 @@ package css_parser
 import (
 	"strings"
 
-	"github.com/evanw/esbuild/internal/compat"
-	"github.com/evanw/esbuild/internal/css_ast"
-	"github.com/evanw/esbuild/internal/css_lexer"
-	"github.com/evanw/esbuild/internal/logger"
+	"github.com/txix-open/esbuild/internal/compat"
+	"github.com/txix-open/esbuild/internal/css_ast"
+	"github.com/txix-open/esbuild/internal/css_lexer"
+	"github.com/txix-open/esbuild/internal/logger"
 )
 
 func (p *parser) commaToken(loc logger.Loc) css_ast.Token {

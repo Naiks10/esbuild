@@ -9,14 +9,14 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/evanw/esbuild/internal/ast"
-	"github.com/evanw/esbuild/internal/compat"
-	"github.com/evanw/esbuild/internal/config"
-	"github.com/evanw/esbuild/internal/helpers"
-	"github.com/evanw/esbuild/internal/js_ast"
-	"github.com/evanw/esbuild/internal/logger"
-	"github.com/evanw/esbuild/internal/renamer"
-	"github.com/evanw/esbuild/internal/sourcemap"
+	"github.com/txix-open/esbuild/internal/ast"
+	"github.com/txix-open/esbuild/internal/compat"
+	"github.com/txix-open/esbuild/internal/config"
+	"github.com/txix-open/esbuild/internal/helpers"
+	"github.com/txix-open/esbuild/internal/js_ast"
+	"github.com/txix-open/esbuild/internal/logger"
+	"github.com/txix-open/esbuild/internal/renamer"
+	"github.com/txix-open/esbuild/internal/sourcemap"
 )
 
 var positiveInfinity = math.Inf(1)

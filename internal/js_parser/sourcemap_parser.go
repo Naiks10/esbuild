@@ -6,11 +6,11 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/evanw/esbuild/internal/ast"
-	"github.com/evanw/esbuild/internal/helpers"
-	"github.com/evanw/esbuild/internal/js_ast"
-	"github.com/evanw/esbuild/internal/logger"
-	"github.com/evanw/esbuild/internal/sourcemap"
+	"github.com/txix-open/esbuild/internal/ast"
+	"github.com/txix-open/esbuild/internal/helpers"
+	"github.com/txix-open/esbuild/internal/js_ast"
+	"github.com/txix-open/esbuild/internal/logger"
+	"github.com/txix-open/esbuild/internal/sourcemap"
 )
 
 // New specification: https://tc39.es/ecma426/

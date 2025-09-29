@@ -30,9 +30,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/evanw/esbuild/internal/fs"
-	"github.com/evanw/esbuild/internal/logger"
-	"github.com/evanw/esbuild/internal/resolver"
+	"github.com/txix-open/esbuild/internal/fs"
+	"github.com/txix-open/esbuild/internal/logger"
+	"github.com/txix-open/esbuild/internal/resolver"
 )
 
 // The time to wait between watch intervals

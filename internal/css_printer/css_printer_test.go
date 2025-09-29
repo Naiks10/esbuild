@@ -3,11 +3,11 @@ package css_printer
 import (
 	"testing"
 
-	"github.com/evanw/esbuild/internal/ast"
-	"github.com/evanw/esbuild/internal/config"
-	"github.com/evanw/esbuild/internal/css_parser"
-	"github.com/evanw/esbuild/internal/logger"
-	"github.com/evanw/esbuild/internal/test"
+	"github.com/txix-open/esbuild/internal/ast"
+	"github.com/txix-open/esbuild/internal/config"
+	"github.com/txix-open/esbuild/internal/css_parser"
+	"github.com/txix-open/esbuild/internal/logger"
+	"github.com/txix-open/esbuild/internal/test"
 )
 
 func expectPrintedCommon(t *testing.T, name string, contents string, expected string, options Options) {

@@ -7,8 +7,8 @@ package bundler_tests
 import (
 	"testing"
 
-	"github.com/evanw/esbuild/internal/compat"
-	"github.com/evanw/esbuild/internal/config"
+	"github.com/txix-open/esbuild/internal/compat"
+	"github.com/txix-open/esbuild/internal/config"
 )
 
 var lower_suite = suite{
@@ -1562,7 +1562,7 @@ func TestLowerPrivateSuperES2021(t *testing.T) {
 	})
 }
 
-// https://github.com/evanw/esbuild/issues/2158
+// https://github.com/txix-open/esbuild/issues/2158
 func TestLowerPrivateSuperStaticBundleIssue2158(t *testing.T) {
 	lower_suite.expectBundled(t, bundled{
 		files: map[string]string{
@@ -2214,7 +2214,7 @@ func TestLowerTemplateObject(t *testing.T) {
 	})
 }
 
-// See https://github.com/evanw/esbuild/issues/1424 for more information
+// See https://github.com/txix-open/esbuild/issues/1424 for more information
 func TestLowerPrivateClassFieldStaticIssue1424(t *testing.T) {
 	lower_suite.expectBundled(t, bundled{
 		files: map[string]string{
@@ -2237,7 +2237,7 @@ func TestLowerPrivateClassFieldStaticIssue1424(t *testing.T) {
 	})
 }
 
-// See https://github.com/evanw/esbuild/issues/1493 for more information
+// See https://github.com/txix-open/esbuild/issues/1493 for more information
 func TestLowerNullishCoalescingAssignmentIssue1493(t *testing.T) {
 	lower_suite.expectBundled(t, bundled{
 		files: map[string]string{

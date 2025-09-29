@@ -247,7 +247,7 @@ let buildTests = {
   },
 
   // A local "node_modules" path should be preferred over "NODE_PATH".
-  // See: https://github.com/evanw/esbuild/issues/1117
+  // See: https://github.com/txix-open/esbuild/issues/1117
   async nodePathsLocalPreferredTestIssue1117({ esbuild, testDir }) {
     let srcDir = path.join(testDir, 'src');
     let srcOtherDir = path.join(testDir, 'src', 'node_modules', 'other');
@@ -3741,7 +3741,7 @@ import "after/alias";
 `)
   },
 
-  // https://github.com/evanw/esbuild/issues/3915
+  // https://github.com/txix-open/esbuild/issues/3915
   async yarnPnP_stackOverflow({ esbuild, testDir }) {
     const entry = path.join(testDir, 'entry.jsx')
 
@@ -4183,7 +4183,7 @@ let watchTests = {
     }
   },
 
-  // See: https://github.com/evanw/esbuild/issues/3062
+  // See: https://github.com/txix-open/esbuild/issues/3062
   async watchNodePaths({ esbuild, testDir }) {
     const input = path.join(testDir, 'in.js')
     const outfile = path.join(testDir, 'out.js')
@@ -6326,7 +6326,7 @@ class Foo {
 
   async ts({ esbuild }) {
     const { code } = await esbuild.transform(`enum Foo { FOO }`, { loader: 'ts' })
-    assert.strictEqual(code, `var Foo = /* @__PURE__ */ ((Foo2) => {\n  Foo2[Foo2["FOO"] = 0] = "FOO";\n  return Foo2;\n})(Foo || {});\n`)
+    assert.strictEqual(code, `var Foo = /* @__PURE__ */ ((Foo3) => {\n  Foo2[Foo2["FOO"] = 0] = "FOO";\n  return Foo2;\n})(Foo || {});\n`)
   },
 
   async tsx({ esbuild }) {
@@ -7640,7 +7640,7 @@ ${path.relative(process.cwd(), input).split(path.sep).join('/')}:1:2: ERROR: Une
 }
 
 let childProcessTests = {
-  // More info about this test case: https://github.com/evanw/esbuild/issues/2727
+  // More info about this test case: https://github.com/txix-open/esbuild/issues/2727
   async testIncrementalChildProcessExit({ testDir, esbuild }) {
     const file = path.join(testDir, 'build.js')
 

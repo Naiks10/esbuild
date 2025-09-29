@@ -4,13 +4,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/evanw/esbuild/internal/ast"
-	"github.com/evanw/esbuild/internal/compat"
-	"github.com/evanw/esbuild/internal/config"
-	"github.com/evanw/esbuild/internal/js_parser"
-	"github.com/evanw/esbuild/internal/logger"
-	"github.com/evanw/esbuild/internal/renamer"
-	"github.com/evanw/esbuild/internal/test"
+	"github.com/txix-open/esbuild/internal/ast"
+	"github.com/txix-open/esbuild/internal/compat"
+	"github.com/txix-open/esbuild/internal/config"
+	"github.com/txix-open/esbuild/internal/js_parser"
+	"github.com/txix-open/esbuild/internal/logger"
+	"github.com/txix-open/esbuild/internal/renamer"
+	"github.com/txix-open/esbuild/internal/test"
 )
 
 func expectPrintedCommon(t *testing.T, name string, contents string, expected string, options config.Options) {
@@ -1011,7 +1011,7 @@ func TestJSX(t *testing.T) {
 	// b) Enabling JSX preservation means that JSX will be transformed again anyway
 	// c) People do very weird/custom things with JSX that "preserve" shouldn't break
 	//
-	// See also: https://github.com/evanw/esbuild/issues/3605
+	// See also: https://github.com/txix-open/esbuild/issues/3605
 	expectPrintedJSXASCII(t, "<a b='π'/>", "<a b='π' />;\n")
 	expectPrintedJSXASCII(t, "<a b='𐀀'/>", "<a b='𐀀' />;\n")
 	expectPrintedJSXASCII(t, "<a>π</a>", "<a>π</a>;\n")

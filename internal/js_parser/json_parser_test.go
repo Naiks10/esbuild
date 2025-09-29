@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/evanw/esbuild/internal/ast"
-	"github.com/evanw/esbuild/internal/js_ast"
-	"github.com/evanw/esbuild/internal/js_printer"
-	"github.com/evanw/esbuild/internal/logger"
-	"github.com/evanw/esbuild/internal/test"
+	"github.com/txix-open/esbuild/internal/ast"
+	"github.com/txix-open/esbuild/internal/js_ast"
+	"github.com/txix-open/esbuild/internal/js_printer"
+	"github.com/txix-open/esbuild/internal/logger"
+	"github.com/txix-open/esbuild/internal/test"
 )
 
 func expectParseErrorJSON(t *testing.T, contents string, expected string) {

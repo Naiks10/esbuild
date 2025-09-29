@@ -3,11 +3,11 @@ package cache
 import (
 	"sync"
 
-	"github.com/evanw/esbuild/internal/css_ast"
-	"github.com/evanw/esbuild/internal/css_parser"
-	"github.com/evanw/esbuild/internal/js_ast"
-	"github.com/evanw/esbuild/internal/js_parser"
-	"github.com/evanw/esbuild/internal/logger"
+	"github.com/txix-open/esbuild/internal/css_ast"
+	"github.com/txix-open/esbuild/internal/css_parser"
+	"github.com/txix-open/esbuild/internal/js_ast"
+	"github.com/txix-open/esbuild/internal/js_parser"
+	"github.com/txix-open/esbuild/internal/logger"
 )
 
 // This cache intends to avoid unnecessarily re-parsing files in subsequent

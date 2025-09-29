@@ -16,14 +16,14 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/evanw/esbuild/internal/bundler"
-	"github.com/evanw/esbuild/internal/cache"
-	"github.com/evanw/esbuild/internal/compat"
-	"github.com/evanw/esbuild/internal/config"
-	"github.com/evanw/esbuild/internal/fs"
-	"github.com/evanw/esbuild/internal/linker"
-	"github.com/evanw/esbuild/internal/logger"
-	"github.com/evanw/esbuild/internal/test"
+	"github.com/txix-open/esbuild/internal/bundler"
+	"github.com/txix-open/esbuild/internal/cache"
+	"github.com/txix-open/esbuild/internal/compat"
+	"github.com/txix-open/esbuild/internal/config"
+	"github.com/txix-open/esbuild/internal/fs"
+	"github.com/txix-open/esbuild/internal/linker"
+	"github.com/txix-open/esbuild/internal/logger"
+	"github.com/txix-open/esbuild/internal/test"
 )
 
 func es(version int) compat.JSFeature {

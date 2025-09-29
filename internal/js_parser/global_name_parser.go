@@ -1,9 +1,9 @@
 package js_parser
 
 import (
-	"github.com/evanw/esbuild/internal/helpers"
-	"github.com/evanw/esbuild/internal/js_lexer"
-	"github.com/evanw/esbuild/internal/logger"
+	"github.com/txix-open/esbuild/internal/helpers"
+	"github.com/txix-open/esbuild/internal/js_lexer"
+	"github.com/txix-open/esbuild/internal/logger"
 )
 
 func ParseGlobalName(log logger.Log, source logger.Source) (result []string, ok bool) {

@@ -14,10 +14,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/evanw/esbuild/internal/cli_helpers"
-	"github.com/evanw/esbuild/internal/fs"
-	"github.com/evanw/esbuild/internal/logger"
-	"github.com/evanw/esbuild/pkg/api"
+	"github.com/txix-open/esbuild/internal/cli_helpers"
+	"github.com/txix-open/esbuild/internal/fs"
+	"github.com/txix-open/esbuild/internal/logger"
+	"github.com/txix-open/esbuild/pkg/api"
 )
 
 func newBuildOptions() api.BuildOptions {

@@ -4,8 +4,8 @@ import (
 	"regexp"
 	"testing"
 
-	"github.com/evanw/esbuild/internal/compat"
-	"github.com/evanw/esbuild/internal/config"
+	"github.com/txix-open/esbuild/internal/compat"
+	"github.com/txix-open/esbuild/internal/config"
 )
 
 var dce_suite = suite{

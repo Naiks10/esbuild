@@ -5,15 +5,15 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/evanw/esbuild/internal/ast"
-	"github.com/evanw/esbuild/internal/compat"
-	"github.com/evanw/esbuild/internal/config"
-	"github.com/evanw/esbuild/internal/helpers"
-	"github.com/evanw/esbuild/internal/js_ast"
-	"github.com/evanw/esbuild/internal/js_printer"
-	"github.com/evanw/esbuild/internal/logger"
-	"github.com/evanw/esbuild/internal/renamer"
-	"github.com/evanw/esbuild/internal/test"
+	"github.com/txix-open/esbuild/internal/ast"
+	"github.com/txix-open/esbuild/internal/compat"
+	"github.com/txix-open/esbuild/internal/config"
+	"github.com/txix-open/esbuild/internal/helpers"
+	"github.com/txix-open/esbuild/internal/js_ast"
+	"github.com/txix-open/esbuild/internal/js_printer"
+	"github.com/txix-open/esbuild/internal/logger"
+	"github.com/txix-open/esbuild/internal/renamer"
+	"github.com/txix-open/esbuild/internal/test"
 )
 
 func expectParseErrorCommon(t *testing.T, contents string, expected string, options config.Options) {
@@ -232,7 +232,7 @@ func expectPrintedJSXAutomatic(t *testing.T, options JSXAutomaticTestOptions, co
 
 func TestUnOp(t *testing.T) {
 	// This was important to someone for a very obscure reason. See
-	// https://github.com/evanw/esbuild/issues/4041 for more info.
+	// https://github.com/txix-open/esbuild/issues/4041 for more info.
 	expectPrinted(t, "let x; void 0; x", "let x;\nx;\n")
 	expectPrinted(t, "let x; void x; x", "let x;\nvoid x;\nx;\n")
 }
@@ -2815,7 +2815,7 @@ func TestSwitch(t *testing.T) {
 	expectPrintedMangle(t, "for (x of y) z: switch (1) { case 0: a(); break z; default: b(); break z }", "for (x of y) z: switch (1) {\n  default:\n    b();\n    break z;\n}\n")
 
 	// Some people put functions inside case expressions, so make sure that works
-	// For more info, see: https://github.com/evanw/esbuild/issues/4088
+	// For more info, see: https://github.com/txix-open/esbuild/issues/4088
 	expectPrinted(t, "switch (0) { case x(() => 1): y = () => 2; case x(() => 3): y = () => 4 }",
 		"switch (0) {\n  case x(() => 1):\n    y = () => 2;\n  case x(() => 3):\n    y = () => 4;\n}\n")
 }
@@ -6620,7 +6620,7 @@ func TestMangleTry(t *testing.T) {
 	expectPrintedMangle(t, "try {} catch (e) { foo() } finally { let x = bar() }", "{\n  let x = bar();\n}\n")
 
 	// The Kotlin compiler apparently generates code like this.
-	// See https://github.com/evanw/esbuild/issues/4064 for info.
+	// See https://github.com/txix-open/esbuild/issues/4064 for info.
 	expectPrintedMangle(t, "x: try { while (true) ; break x } catch {}", "x: try {\n  for (; ; ) ;\n  break x;\n} catch {\n}\n")
 }
 

@@ -3,11 +3,11 @@ package runtime_test
 import (
 	"testing"
 
-	"github.com/evanw/esbuild/internal/compat"
-	"github.com/evanw/esbuild/internal/config"
-	"github.com/evanw/esbuild/internal/js_parser"
-	"github.com/evanw/esbuild/internal/logger"
-	"github.com/evanw/esbuild/internal/runtime"
+	"github.com/txix-open/esbuild/internal/compat"
+	"github.com/txix-open/esbuild/internal/config"
+	"github.com/txix-open/esbuild/internal/js_parser"
+	"github.com/txix-open/esbuild/internal/logger"
+	"github.com/txix-open/esbuild/internal/runtime"
 )
 
 func TestUnsupportedFeatures(t *testing.T) {

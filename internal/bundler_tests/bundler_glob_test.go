@@ -3,7 +3,7 @@ package bundler_tests
 import (
 	"testing"
 
-	"github.com/evanw/esbuild/internal/config"
+	"github.com/txix-open/esbuild/internal/config"
 )
 
 var glob_suite = suite{

@@ -28,9 +28,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/evanw/esbuild/internal/fs"
-	"github.com/evanw/esbuild/internal/helpers"
-	"github.com/evanw/esbuild/internal/logger"
+	"github.com/txix-open/esbuild/internal/fs"
+	"github.com/txix-open/esbuild/internal/helpers"
+	"github.com/txix-open/esbuild/internal/logger"
 )
 
 ////////////////////////////////////////////////////////////////////////////////
